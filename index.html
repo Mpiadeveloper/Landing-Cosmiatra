@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camila Diaz - Cosmiatra</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet"
+</head>
+<body>
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">
+            <div class="logo-circle">CD</div>
+            <span>Camila Diaz</span>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#sobre-mi">Sobre mí</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#contacto" class="mobile-btn">Reservar Cita</a></li><li><a href="#servicios" class="mobile-btn-outline">Ver Servicios</a></li>
+            </ul>
+        </nav>
+
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <a href="#contacto" class="btn-primary">Reservar Cita</a>
+        <a href="#servicios" class="btn-secondary">Ver Servicios</a>
+    </header>
+
+    <!-- HERO -->
+    <section id="inicio" class="hero">
+        <div class="overlay"></div>
+
+        <div class="hero-content">
+            <div class="stars">
+                ⭐ ⭐ ⭐ ⭐ ⭐
+                <span>Más de 500 pacientes satisfechos</span>
+            </div>
+            <h1> <i>Camila Diaz</i></h1>
+            <h2>Cuidado Especializado</h2>
+
+            <p> Tratamientos personalizados para tu piel con la profesional Camila Diaz.
+                Más de 15 años de experiencia en cosmiatra. 
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#contacto" class="btn-primary">Reserva tu cita</a>
+                <a href="#servicios" class="btn-secondary">Conoce mis servicios</a>
+            </div>
+        </div>
+    </section>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+            hamburger.classList.toggle("active");
+        });
+    </script>
+
+    <!-- about me -->
+     <section id="sobre-mi" class="about-me">
+        <div class="container about-container">
+            <div class="about-image">
+                <img src="img/ABOUT-ME.jpg" alt="Patricia Morello"> 
+            </div>
+
+            <div class="about-text">
+                <h2>Sobre mí</h2>
+                <p>
+                    Hola, soy Camila Diaz, una cosmiatra apasionada por el cuidado de la piel.
+                    Con más de 15 años de experiencia, me dedico a ayudar a mis pacientes a lograr
+                    una piel saludable y radiante. Mi enfoque se basa en tratamientos personalizados
+                    que combinan técnicas avanzadas con productos de alta calidad. 
+                </p>
+                <p>
+                    Mi misión es brindar un servicio excepcional y resultados visibles, siempre
+                    priorizando la salud y bienestar de mis pacientes. 
+                </p>
+                <a href="#" class="btn-primary">Conoce mis servicios</a>
+            </div>
+
+        </div>
+     </section>
+
+<!-- SERVICIOS -->
+    <section id="servicios" class="services">
+        <div class="container">
+
+            <h2 class="section-title">Mis servicios</h2>
+            <p class="section-subtitle">
+                Tratamientos personalizados diseñados para resaltar la belleza natural de tu piel.
+            </p>
+            <p class="section-description">
+                Ofrezco una variedad de servicios que incluyen 
+                limpieza facial profunda - peeling químico - tratamientos antiage -
+                Rosacea - Presoterapia - Ortomolecular - Oncologica - HIFU - 
+                Depilacion Definitiva y más.
+
+
+
+            <div class="services-grid">
+            
+                <div class="service-card">
+                    <img src="img/SERVICIO1.jpg" alt="Limpieza Facial">
+                    <h3>Limpieza Facial</h3>
+                    <p>Eliminacion profunda de impurezas para una piel fresca y renovada.</p>
+                </div>
+
+                <div class="service-card">
+                    <img src="img/servicio2.jpg" alt="Peeling Quimico">
+                    <h3>Peeling Quimico</h3>
+                    <p>Renovacion celular que mejora textura, manchas y lineas finas.</p>
+                </div>
+
+                <div class="service-card">
+                    <img src="img/SERVICIO3.jpg" alt="Tratamiento Antiage">
+                    <h3>Tratamiento Antiage</h3>
+                    <p>Estimulacion y cuidado avanzado para una piel mas firme y luminosa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- contacto -->
+    <section id="contacto" class="contact">
+        <div class="container contact-container">
+            
+            <div class="contact-info">
+                <h2>Contacto</h2>
+                <p>¿Listo para cuidar tu piel? Contáctame para reservar tu cita o para cualquier consulta.</p>
+
+                <p><strong>📍 Dirección:</strong> Lanus - Buenos Aires, Argentina</p>
+                <p><strong>📞 Teléfono:</strong> +54 11 2154-2210 </p>
+            </div>
+
+            <form class="contact-form">
+                
+                <input type="text" placeholder="Tu nombre" required>
+                <input type="email" placeholder="Tu correo electrónico" required>
+                <textarea placeholder="Tu mensaje" required></textarea>
+                <button type="submit" class="btn-primary">Enviar mensaje</button>
+            </form>
+        </div>
+    </section>
+    <a href="https://wa.me/5491121542210?text=Hola,%20quiero%20consultar%20por%20una%20cita" 
+    target="_blank" 
+    class="whatsapp-float">
+    WhatsApp
+</a>
+</body>
+</html>
