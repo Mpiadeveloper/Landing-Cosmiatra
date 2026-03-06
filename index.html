@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Camila Diaz - Cosmiatra</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet"
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Camila Diaz - Cosmiatra</title>
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    </head>
 <body>
     <!-- NAVBAR -->
     <header class="navbar">
@@ -20,7 +20,6 @@
                 <li><a href="#servicios">Servicios</a></li>
                 <li><a href="#sobre-mi">Sobre mí</a></li>
                 <li><a href="#contacto">Contacto</a></li>
-                <li><a href="#contacto" class="mobile-btn">Reservar Cita</a></li><li><a href="#servicios" class="mobile-btn-outline">Ver Servicios</a></li>
             </ul>
         </nav>
 
@@ -59,11 +58,33 @@
     <script>
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.querySelector('.nav-links');
+        const navItems = document.querySelectorAll('.nav-links a');
 
         hamburger.addEventListener("click", () => {
-            navLinks.classList.toggle("active");
-            hamburger.classList.toggle("active");
+        navLinks.classList.toggle("active");
+        hamburger.classList.toggle("active");
+    });
+        navItems.forEach(item => {
+            item.addEventListener("click", () => {
+                navLinks.classList.remove("active"); // Quitamos la clase de visibilidad
+                hamburger.classList.remove("active"); // Quitamos la animación de la X
         });
+    });
+    const observerOptions = { threshold: 0.1 };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
+            }
+        });
+    }, observerOptions);
+    document.querySelectorAll('section').forEach(section => {
+        section.style.opacity = "0";
+        section.style.transform = "translateY(30px)";
+        section.style.transition = "all 0.8s ease-out";
+        observer.observe(section);
+    });
     </script>
 
     <!-- about me -->
